@@ -1,0 +1,14 @@
+// create a function that takes an array and breaks it into chunks the length of the 2nd arg
+function splitArray(arr, num) {
+  // create an empty array to return
+  let result = [];
+
+  // loop through the array, SKIPPING the value of num, and pushing 0 to num
+  for (let i = 0; i < arr.length; i += num) {
+    result.push(arr.slice(i, i + num));
+  }
+
+  return result;
+}
+
+console.log(splitArray([1, 2, 3, 4, 5, 6], 2));
