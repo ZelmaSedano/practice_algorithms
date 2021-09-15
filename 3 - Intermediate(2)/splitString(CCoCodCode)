@@ -1,0 +1,20 @@
+/ create a function that takes a string like 'Code' and returns 'CCoCodCode'
+function stringsplotion(str) {
+  // create a result to return
+  let result = '';
+
+  // loop through the string, starting at 1 b/c we want to skip it, and as i increases, add a substring to result that increases with each loop
+  // ex: C, C+o, C+od, C+ode
+  for (let i = 1; i <= str.length; i++) {
+    result += str.slice(0, i);
+    // index 0 = C to index 1, non-inclusive -> C
+    // index 0 = C to index 2, non-inclusive = o -> Co
+    // index 0 = C to index 3, non-inclusive = d -> Cod
+    // index 0 = C to index 4, non-inclusive = e -> Code
+    console.log(str[(0, i - 1)]);
+  }
+
+  return result;
+}
+
+console.log(stringsplotion('Code'));
