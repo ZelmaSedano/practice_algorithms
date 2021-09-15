@@ -1,11 +1,10 @@
-// find duplicates
+// create a function that returns the duplicates from an array
 function findDupes(arr) {
-  // create an empty array to holds dupes
+  // create an empty array to hold dupes
   let result = [];
 
-  // loop through the array i times
   for (let i = 0; i < arr.length; i++) {
-    // loop through the array j times
+    // make sure to skip i
     for (let j = i + 1; j < arr.length; j++) {
       if (arr[i] === arr[j]) {
         result.push(arr[i]);
@@ -16,4 +15,4 @@ function findDupes(arr) {
   return result;
 }
 
-console.log(findDupes([1, 2, 3, 4, 1, 2, 3]));
+console.log(findDupes([1, 2, 3, 1]));
