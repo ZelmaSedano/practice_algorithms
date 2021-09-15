@@ -1,0 +1,12 @@
+function moveZeroes (nums) { 
+  for(let i = nums.length; i--;){ 
+    // if the current num is 0, splice it off and add it to the end
+    if (nums[i] === 0) {
+      nums.splice(i, 1);
+      nums.push(0);
+    }
+  }
+  return nums;
+}
+
+console.log(moveZeroes([0, 0, 1]));
