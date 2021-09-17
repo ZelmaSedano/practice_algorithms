@@ -1,0 +1,8 @@
+// create a function that merges two arrays together
+function mergeArrays(arr1, arr2) {
+  // use the concat method to add the 2nd one to the 1st one
+  arr1.push(...arr2);
+  return arr1;
+}
+
+console.log(mergeArrays([1, 2, 3], [4, 5, 6]));
