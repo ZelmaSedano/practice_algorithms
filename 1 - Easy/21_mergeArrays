@@ -1,0 +1,9 @@
+function mergeArrays(arr1, arr2) {
+  // create a new array and concatonate the two arrs together
+  newArray = arr1.concat(arr2)
+  // sort the new concatonated array
+  let sortedArray = newArray.sort((a, b) => a - b) 
+  return newArray
+}
+
+console.log(mergeArrays([1,2,3],[4,5,6]))
