@@ -1,0 +1,5 @@
+// use the spread operator to remove duplicates from an array
+let chars = ['A', 'B', 'A', 'C', 'B'];
+let uniqueChars = [...new Set(chars)];
+
+console.log(uniqueChars);
