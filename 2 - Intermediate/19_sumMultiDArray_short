@@ -1,0 +1,5 @@
+// create a function that sums the elements of a multi-d/nested array
+function sumMultiDArray(arr) {
+  let result = arr.flat().reduce((acc, val) => acc + val);
+  return result;
+}
