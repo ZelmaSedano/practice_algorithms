@@ -1,0 +1,13 @@
+function sumArrays(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      sum += sumArrays(arr[i]);
+    } else {
+      sum += arr[i];
+    }
+  }
+  return sum;
+}
+
+console.log(sumArrays([1, 2, 3, [4, 5, [6]]]));
