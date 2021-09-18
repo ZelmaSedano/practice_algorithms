@@ -1,5 +1,6 @@
-// use the spread operator to remove duplicates from an array
-let chars = ['A', 'B', 'A', 'C', 'B'];
-let uniqueChars = [...new Set(chars)];
+function removeDupes(arr) {
+  let result = [...new Set(arr)];
+  return result;
+}
 
-console.log(uniqueChars);
+console.log(removeDupes([1, 2, 3, 1]));
