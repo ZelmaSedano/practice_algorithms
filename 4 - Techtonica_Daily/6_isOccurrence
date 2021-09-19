@@ -1,0 +1,23 @@
+function isRotation(s1, s2){
+  // return simply returns a boolean
+  // repeat returns a string repeated (num) times
+  // .includes checks to see if argument provided includes in str applied to 
+  // if strings are the same length and s2 repeated twice includes s1 (that'll create a rotation-like effect), then return true;
+  if(s1.length === s2.length && s2.repeat(2).includes(s1)){
+    return true;
+  }
+  else {
+    return false;
+  }
+  // return s1.length === s2.length && s2.repeat(2).includes(s1);
+}
+
+console.log(isRotation('coding', 'ingcod')) // -> true
+console.log(isRotation('coding', 'ingcod')) // -> true
+console.log(isRotation('github', 'git'))// -> false
+console.log(isRotation('github', 'git'))// -> false
+console.log(isRotation('node', 'edon')) // -> false
+
+
+// node -> nodenode
+// node -> oden
