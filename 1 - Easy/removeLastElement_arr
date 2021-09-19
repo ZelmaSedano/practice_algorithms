@@ -1,0 +1,7 @@
+// create a function that removes the last element from an array
+function removeLastElementArr(arr) {
+  arr.pop();
+  return arr;
+}
+
+console.log(removeLastElementArr([1, 2, 3, 4, 5, 6]));
