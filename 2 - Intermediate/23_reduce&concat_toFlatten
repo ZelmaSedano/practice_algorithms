@@ -1,0 +1,14 @@
+let a = [[0, 1], [2, 3], [4, 5]];
+
+// reduce applies function on every element
+a.reduce(
+  // function takes array a & b
+  function(a, b) {
+    // concatonate a & b
+    // return it
+    return a.concat(b);
+  },
+  []
+);
+
+// flattened is [0, 1, 2, 3, 4, 5]
