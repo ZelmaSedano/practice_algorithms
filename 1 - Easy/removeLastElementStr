@@ -1,0 +1,11 @@
+// create a function that removes the last element from a string
+function removeLastElString(str) {
+  // split into array
+  let result = str.split('');
+  // pop off the last element
+  result.pop();
+  // return joined result
+  return result.join('');
+}
+
+console.log(removeLastElString('haha'));
