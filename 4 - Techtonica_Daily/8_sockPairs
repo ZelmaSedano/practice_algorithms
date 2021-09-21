@@ -1,34 +1,37 @@
-function sockMerchant(num, arr){
+// count the number of pairs/matching numbers in an array
+function countSockPairs(arr) {
   // create an empty object to add to
-  const socks = {}
+  const obj = {};
 
   // loop through arr?
-  for(let sock of arr) {
+  for (let sock of arr) {
     // if we don't have an occurence of arr in obj
-    if(!socks[sock]) {
+    if (!obj[sock]) {
       // this is how you add to obj
-      socks[sock] = 1;
+      obj[sock] = 1;
     } else {
-      // if there already an occurrence of sock in obj, then just add to that occurrence
+      // if there is already an occurrence of sock in obj, then just add to that occurrence
       // push into object's property as value
-      socks[sock] += 1;
+      obj[sock] += 1;
     }
+    x;
   }
 
   // check to see if value is above 2
 
   // Option 1:
-  // create count counter variable 
+  // create count counter variable
   let count = 0;
 
-  // check the value of each property in obj
-  for (const value in socks) {
+  // check the values of each property in obj
+  for (const value in obj) {
     // if the value is more than or equl to 2
-    if (socks[value] >= 2) {
-      // we add one pair for every two 
-      count = count + Math.floor(socks[value] / 2);
-      // count = count + (socks[value] / 2) rounded down
-      // count = count + Math.floor(3/2) = 1 
+    if (obj[value] >= 2) {
+      // we add one pair for every two
+      // rounding the value down so it's an integer instead of a floating point
+      count = count + Math.floor(obj[value] / 2);
+      // count = count + (obj[value] / 2) rounded down
+      // count = count + Math.floor(3/2) = 1
       // 1.5 rounded down
     }
   }
@@ -36,4 +39,4 @@ function sockMerchant(num, arr){
   return count;
 }
 
-console.log(sockMerchant(9,[10,20,20,10,10,30,50,10,20]));
+console.log(countSockPairs([10, 20, 20, 10, 10, 30, 50, 10, 20]));
