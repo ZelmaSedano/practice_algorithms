@@ -1,0 +1,12 @@
+// create a function that checks to see if an array has a given element
+function hasElement(arr, element) {
+  if (arr.indexOf(element) >= 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+let numbers = [1, 2, 3, 4, 5];
+
+console.log(hasElement(numbers, 5));
