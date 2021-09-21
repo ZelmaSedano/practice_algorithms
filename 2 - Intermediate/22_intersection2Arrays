@@ -1,0 +1,16 @@
+function sameElements(arr1, arr2) {
+  let result = [];
+
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr2.includes(arr1[i])) {
+      result.push(arr1[i]);
+    }
+  }
+
+  return result;
+}
+
+console.log(sameElements(['A', 'B', 'Z'], ['Z', 'X', 'Y']));
+console.log(sameElements(['Z', 'A', '1'],['D', 'A', '2']))
+// test
+console.log(sameElements([], [1,2,3]));
