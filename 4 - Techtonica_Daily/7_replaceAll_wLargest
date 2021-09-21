@@ -1,0 +1,23 @@
+function maxEnd(arr){
+  if(arr[0] > arr[arr.length-1]) {
+    // resets all the values to index 0's
+    arr.fill(arr[0]) 
+  } else if(arr[arr.length-1] > arr[0]) {
+    arr.fill(arr[arr.length-1]);
+  } 
+  return arr;
+}
+
+console.log(maxEnd([1,2,3,11]));
+console.log(maxEnd([3,3,3]));
+console.log(maxEnd([5,2,5]));
+console.log(maxEnd([5,2,1]));
+
+// Ternary Option:
+function max_end3(arr){
+  return arr[0] > arr[2] ? arr.fill(arr[0]) : arr.fill(arr[2]);
+  
+}
+
+console.log(max_end3([3,1,3]));
+console.log(max_end3([5,2,5]));
