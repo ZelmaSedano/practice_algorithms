@@ -1,42 +1,33 @@
-// count the number of pairs/matching numbers in an array
+// create a function that checks to see how many pairs of socks are in an array of socks
 function countSockPairs(arr) {
   // create an empty object to add to
-  const obj = {};
+  let obj = {};
 
-  // loop through arr?
   for (let sock of arr) {
-    // if we don't have an occurence of arr in obj
+    // if the sock isn't present in the arr, add sock w/ a value of 1 to obj
     if (!obj[sock]) {
-      // this is how you add to obj
       obj[sock] = 1;
     } else {
-      // if there is already an occurrence of sock in obj, then just add to that occurrence
-      // push into object's property as value
-      obj[sock] += 1;
+      obj[sock]++;
     }
-    x;
   }
+  // console.log('obj', obj);
 
-  // check to see if value is above 2
-
-  // Option 1:
-  // create count counter variable
+  // create a counter variable
   let count = 0;
 
-  // check the values of each property in obj
-  for (const value in obj) {
-    // if the value is more than or equl to 2
+  // loop through the object, checking each value in the key-value pair
+  for (let value in obj) {
+    // if the value is above two, then it's a pair
     if (obj[value] >= 2) {
-      // we add one pair for every two
-      // rounding the value down so it's an integer instead of a floating point
-      count = count + Math.floor(obj[value] / 2);
-      // count = count + (obj[value] / 2) rounded down
-      // count = count + Math.floor(3/2) = 1
-      // 1.5 rounded down
+      // reset the value of count to be value/2 & rounded down
+      // it will rotate each time, adding 1/2 the value of value each time
+      count += Math.floor(obj[value] / 2);
+      // 15 = 1 pair, 18 = 1 pair, 20 = 2 pair.  That's 4 pairs!
     }
   }
-  // once we're out of the loop, return count
+
   return count;
 }
 
-console.log(countSockPairs([10, 20, 20, 10, 10, 30, 50, 10, 20]));
+console.log(countSockPairs([18, 20, 20, 18, 20, 20, 15, 15]));
