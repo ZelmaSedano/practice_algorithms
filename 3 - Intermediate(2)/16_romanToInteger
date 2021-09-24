@@ -1,30 +1,34 @@
-var romanToInt = function(s) {
-
-    const sym = { 
+// convert roman numerals to numbers
+function romanToInt (num) {
+    let romans = {
         'I': 1,
         'V': 5,
         'X': 10,
         'L': 50,
         'C': 100,
-        'D': 500,
+        'D': 500, 
         'M': 1000
     }
 
-    let result = 0;
+    // create result variable to return
+    let result = 0; 
 
-    for (i=0; i < s.length; i++){
-        const cur = sym[s[i]];
-        const next = sym[s[i+1]];
+    // loop through the numerals
+    for(let i = 0; i < num.length; i++) {
+        // create a variable to hold current and next element 
+        const current = romans[num[i]]; // goes into romans & finds current element
+        // console.log(current); // IV = 1 & 5
+        const next = romans[num[i+1]];
 
-        if (cur < next){
-            result += next - cur // IV -> 5 - 1 = 4
-            i++
+        // if the current number is less than next, then we have a subtraction: IV = (5-1) = 4
+        if(current < next) {
+            result += next - current; // IV -> 5-1 = 4
         } else {
-            result += cur
+            result += current;
         }
     }
 
-    return result; 
-};
+    return result;
+}
 
-console.log(romanToInt(III));
+console.log(romanToInt('XXX'));
