@@ -5,3 +5,4 @@ let obj = {
 };
 
 console.log(Object.keys(obj));
+// prints like this -> (2) ['cat', 'dog']
