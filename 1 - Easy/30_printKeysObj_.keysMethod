@@ -1,0 +1,7 @@
+let obj = {
+  cat: 'winston',
+  dog: 'benji',
+  house: 'big',
+};
+
+console.log(Object.keys(obj));
