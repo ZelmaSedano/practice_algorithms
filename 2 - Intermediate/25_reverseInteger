@@ -1,0 +1,10 @@
+// create a function that reverses an integer
+function reverseInteger(num) {
+  // split integer into an array, so you can reverse it
+  let arr = num.toString().split('').reverse();
+  let str = arr.join('');
+  let int = parseInt(str);
+  return int;
+}
+
+console.log(reverseInteger(37));
