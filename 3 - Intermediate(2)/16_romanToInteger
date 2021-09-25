@@ -1,34 +1,33 @@
-// convert roman numerals to numbers
-function romanToInt (num) {
-    let romans = {
+var romanToInt = function(str) {
+    // create a variable to hold the result
+    let result = 0;
+    
+    // create an object to hold all the values
+    const obj = { 
         'I': 1,
         'V': 5,
         'X': 10,
         'L': 50,
         'C': 100,
-        'D': 500, 
+        'D': 500,
         'M': 1000
     }
-
-    // create result variable to return
-    let result = 0; 
-
-    // loop through the numerals
-    for(let i = 0; i < num.length; i++) {
-        // create a variable to hold current and next element 
-        const current = romans[num[i]]; // goes into romans & finds current element
-        // console.log(current); // IV = 1 & 5
-        const next = romans[num[i+1]];
-
-        // if the current number is less than next, then we have a subtraction: IV = (5-1) = 4
-        if(current < next) {
-            result += next - current; // IV -> 5-1 = 4
-        } else {
-            result += current;
+    
+    // loop through the string
+    for (i = 0; i < str.length; i++){
+        // check to see the value of the current and next 
+        const cur = obj[str[i]];
+        const next = obj[str[i+1]];
+        // if the current element is smaller than next, then do this
+        if (cur < next){
+            // subtract next - current
+            result += next - cur // IV -> 5 - 1 = 4
+            // iterate
+            i++
+        } else { // if it's in ascending order, just add values to result
+            result += cur
         }
     }
-
-    return result;
-}
-
-console.log(romanToInt('XXX'));
+    // return result/sum
+    return result; 
+};
