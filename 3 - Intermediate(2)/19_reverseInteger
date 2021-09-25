@@ -1,0 +1,25 @@
+// create a function that reverses a given integer, no matter how long it is
+// 1) integers don't have decimals :) 
+function reverseInt(num) {
+
+  if(num < 0) {
+    // change the integer into a string & split it 
+    let arr = num.toString().split('');
+    // split it into an array
+    // save - symbol to variable
+    let negativeSymbol = arr.shift();
+    // console.log(negativeSymbol);
+    let reversed = arr.reverse();
+
+    // return the joined reversed number w/ the negative symbol
+    return negativeSymbol + reversed.join('');
+
+  } else {
+     // change the integer into a string, split it, and reverse it
+  let arr = num.toString().split('').reverse();
+  // return the reversed integer
+  return arr.join('');
+  }
+}
+
+console.log(reverseInt(-101010));
