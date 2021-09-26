@@ -1,0 +1,11 @@
+function elementAtIndices(arr1, arr2) {
+    let result = [];
+    for(let i = 0; i < arr2.length; i++) {
+        // define index
+        let index = arr2[i];
+        result.push(arr1[index]);
+    }
+    return result;
+}
+
+console.log(elementAtIndices([33,66,77,8,99], [2,0,3]));
