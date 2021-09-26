@@ -1,11 +1,14 @@
+// create a function that takes two arrays: the 1st is an array of indices, the 2nd is an array of elements
+// only return elements from the 2nd array that are at the indices specified in arr1
 function elementAtIndices(arr1, arr2) {
     let result = [];
-    for(let i = 0; i < arr2.length; i++) {
-        // define index
-        let index = arr2[i];
-        result.push(arr1[index]);
+
+    for(let i = 0; i < arr1.length; i++) {
+        let index = arr1[i]; // index
+        result.push(arr2[index]);
     }
+
     return result;
 }
 
-console.log(elementAtIndices([33,66,77,88,99], [0,2,3]));
+console.log(elementAtIndices([0,2,4], [33,66,77,88,99]));
