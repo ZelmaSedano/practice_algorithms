@@ -1,0 +1,6 @@
+// create function that checks to see if a given string contains a substring
+function stringIncludesSub(str, substr) {
+  return str.includes(substr);
+}
+
+console.log(stringIncludesSub('foo', 'oo'));
