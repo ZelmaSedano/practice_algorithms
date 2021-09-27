@@ -1,0 +1,6 @@
+let array1 = ['a', 'b', 'c'];
+let array2 = ['z', 'y', 'b'];
+
+const filteredArray = array1.filter(value => array2.includes(value));
+
+console.log(filteredArray);
