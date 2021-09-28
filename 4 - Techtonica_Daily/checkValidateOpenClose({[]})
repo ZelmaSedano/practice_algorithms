@@ -1,31 +1,34 @@
 // create a function that returns true if it has matching parentheses, curly braces, or brackets
 function isValid(str) {
-    // create an array and push every pair - 'stack'
-    let arr = [];
-    // if there are an even number of opening and closing p/c/b's, then this array should be empty
-    // if it's not, it returns false
-    
-    // looping through each element in the string 
-    for(let i = 0; i < str.length; i++) {
-        // inside the for loop, create a variable called char that saves the last element in the array/stack
-        let char = arr[arr.length-1];
-        
-        // if the current element is an opening parentheses, curly braces, or bracket
-        if(str[i] == '(' || str[i] == '{' || str[i] == '[') {
-            
-        // add/pugh the current element to the arr
-            arr.push(str[i]);
-            console.log('bracket added:',arr);
-        }// if there is a corresponding closing bracket in the string 
-        // if the last element is an opening p/c/b, then...
-        else if((char== '(' && str[i] == ')') || (char == '{' && str[i] == '}') || (char == '[' && str[i] == ']')) {
-        // ... pop off the last element that is an opening p/c/b 
+  let arr = [];
+  // if there are an even number of opening and closing p/c/b's, then this array should be empty
+  // if it's not, it returns false
+  
+  // looping through each element in the string 
+  for(let i = 0; i < str.length; i++) {
+      // inside the for loop, create a variable called lastChar that saves the last element in the array/stack
+      let lastChar = arr[arr.length-1];
+      
+      // if the current element is an opening parentheses, curly braces, or bracket
+      if(str[i] == '(' || str[i] == '{' || str[i] == '[') {
+      // add/push the current element to the arr
+        arr.push(str[i]);
+        console.log('bracket added:',arr);
+      }
+      // if there is a corresponding closing bracket in the string 
+      // if the last element is an opening p/c/b, then...
+      else if((lastChar== '(' && str[i] == ')') || (lastChar == '{' && str[i] == '}') || (lastChar == '[' && str[i] == ']')) {
+        // pop off the last element that is an opening p/c/b 
         arr.pop();
         console.log('bracket removed:',arr);
-        } // if there is no corresponding closing bracket in the string
-        else return false; // we can't push b/c there's only a closing p left, and we can't pop b/c there is no opening p/c/b at the end of the array, so we return false
-    }
-    
-    // check the empty stack, if it's empty, so there are no pairs 
-    return arr.length ? false : true;
+      } 
+      // if there is no corresponding closing bracket in the string
+      else return false; 
+      // we can't push b/c there's only a closing p left, and we can't pop b/c there is no opening p/c/b at the end of the array, so we return false
+  }
+  console.log(arr.length);
+  // check the empty stack, if it's empty, so there are no pairs 
+  return arr.length ? false : true;
 }
+
+console.log(isValid('()()()'));
