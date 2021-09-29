@@ -1,10 +1,9 @@
-// create a function that reverses an integer
-function reverseInteger(num) {
-  // split integer into an array, so you can reverse it
-  let arr = num.toString().split('').reverse();
-  let str = arr.join('');
-  let int = parseInt(str);
-  return int;
+// reverse an integer
+function reverseInt(num) {
+  // convert it to the string, then to array, reverse, and join
+  let str = num.toString().split('').reverse().join('');
+  let result = parseInt(str);
+  return result;
 }
 
-console.log(reverseInteger(37));
+console.log(reverseInt(73));
