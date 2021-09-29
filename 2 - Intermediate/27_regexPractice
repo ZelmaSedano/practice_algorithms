@@ -1,0 +1,5 @@
+let myString = 'I love the beach';
+
+let regexSearch = /beach/;
+
+console.log(regexSearch.test(myString));
