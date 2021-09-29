@@ -1,0 +1,26 @@
+// create a function that checks to see if one or more of the numbers from a given array divide into any of the numbers in a range between low and high
+function checkDivisors(low, high, arr) {
+    // loop from low to high, repeating the same thing for each element
+    for(let i = low; i <= high; i++) {
+        // create a counter variable to count how many of the two numbers (if any) divide into this element
+        counter = 0; 
+
+        // loop through the array j times
+        for(let j = 0; j < arr.length; j++) {
+            if(i % arr[j] === 0) {
+                counter += 1;
+            }
+        }
+
+        // use a conditional to print a certain word in place of the number depending on how many of the numbers from the array divide into it
+        if(counter === 2) {
+            console.log('all_match');
+        } else if(counter === 1) {
+            console.log('one_match');
+        } else {
+            console.log(i);
+        }
+    }
+}
+
+checkDivisors(10, 30, [5,7]);
