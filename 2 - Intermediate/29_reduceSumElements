@@ -1,8 +1,0 @@
-// add up the elements from a given array using .reduce
-// 1) create array
-let arr = [1, 2, 3, 4, 5];
-// 1 + 2 + 3 + 4 + 5 = 15
-
-let result = arr.reduce((acc, val) => acc + val);
-
-console.log(result);
