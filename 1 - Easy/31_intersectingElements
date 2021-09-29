@@ -1,6 +1,6 @@
-let array1 = ['a', 'b', 'c'];
-let array2 = ['z', 'y', 'b'];
+function filterIntersectingEls(arr1, arr2) {
+  let result = arr1.filter(value => arr2.includes(value));
+  return result;
+}
 
-const filteredArray = array1.filter(value => array2.includes(value));
-
-console.log(filteredArray);
+console.log(filterIntersectingEls(['a', 'b', 'c'], ['z', 'y', 'b']));
