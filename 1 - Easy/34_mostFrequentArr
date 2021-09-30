@@ -1,0 +1,37 @@
+// create a function that finds the most frequent item in an array
+function mostFrequentItem(arr) {
+  // create an object to hold key/value pairs
+  let obj = {};
+
+  // loop through the array using a for...of loop, and call item 'item'
+  for(let item of arr) {
+    // if the item isn't in the obj, add it w/ a value of 1
+    if(!obj[item]) {
+      obj[item] = 1;
+    } else {
+      // if the item already is in the array, add to its value
+      obj[item]++;
+    }
+  }
+
+  console.log(obj);
+
+  // the number of time an element shows up in the object  
+  let occurrence = 0;
+  // saves the character w/ the most frequent occurrence
+  let occurrenceChar;
+
+  for(let char in obj) {
+    // if count is greater than occurrence, then reset occurrence to be that element's count
+    console.log('characters:', char);
+    if(obj[char] > occurrence) {
+      // value
+      occurrence = obj[char];
+      // key
+      occurrenceChar = char;
+    }
+  }
+  return occurrenceChar;
+}
+
+console.log(mostFrequentItem(['b', 'c', 'a', 'a', 'a']));
