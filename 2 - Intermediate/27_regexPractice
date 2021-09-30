@@ -1,5 +1,6 @@
-let myString = 'I love the beach';
+// use regEx to check and see if a string includes it
+let str = 'I love the beach';
 
 let regexSearch = /beach/;
 
-console.log(regexSearch.test(myString));
+console.log(regexSearch.test(str));
