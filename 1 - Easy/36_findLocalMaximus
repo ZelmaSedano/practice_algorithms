@@ -1,0 +1,8 @@
+// sort the array, then return first element in the array
+function localMaximus(arr) {
+  let sorted = arr.sort((a,b) => a-b);
+  let result = sorted[sorted.length-1];
+  return 'local maximus is: ' + result;
+}
+
+console.log(localMaximus([11,1,111]));
