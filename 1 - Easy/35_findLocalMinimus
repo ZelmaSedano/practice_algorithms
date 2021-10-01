@@ -1,0 +1,8 @@
+// sort the array, then return first element in the array
+function localMinimus(arr) {
+  let sorted = arr.sort((a,b) => a-b);
+  let result = sorted[0];
+  return 'local minimus is: ' + result;
+}
+
+console.log(localMinimus([11,1,111]));
