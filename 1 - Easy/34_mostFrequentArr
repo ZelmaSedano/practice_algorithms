@@ -23,9 +23,6 @@ function mostFrequentItem(arr) {
 
   // loop through the object, checking the value for every element
   for(let element in obj) {
-    // if count is greater than occurrence, then reset occurrence to be that element's count and reset occurrenceelement to be that element's value;
-    // console.log('elementacters:', element);
-    // if the current elementacter's value is larger than occurrence
     if(obj[element] > occurrence) {
       // then replace occurrence with current elementacter's value
       occurrence = obj[element];
