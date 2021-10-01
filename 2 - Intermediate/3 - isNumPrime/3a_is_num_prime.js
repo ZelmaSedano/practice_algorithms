@@ -1,18 +1,18 @@
-// create a function that checks to see if a given number is a prime number of not - prime numbers are not 1 and no number between 2 and itself divide into it
+// create a function that checks to see if a number is a prime
 function isNumPrime(num) {
-    if (num === 1) {
+  // fast-fail: if num is 1, then return false
+  if(num === 1) {
+    return false;
+  } else {
+    // loop from 2 to number, not including num, and see if any of the numbers b/w 2 & it divide into it; if one does, it's not a prime
+    for(let i = 2; i < num; i++) {
+      // if any number divides into num
+      if(num % i === 0) {
         return false;
-    } else {
-        // loop from 2 to the number before num and see if any of the numbers divide into num 
-        for (let i = 2; i < num; i++) {
-            if (num % i === 0) {
-                    return false;
-            } 
-        }
-
-        // as a backup, if the number is a prime, return true
-        return true;
+      }
     }
+  }
+  return true;
 }
 
 console.log(isNumPrime(23));
