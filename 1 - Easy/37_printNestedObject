@@ -1,0 +1,28 @@
+// print the elements inside a nested object
+// Ex obj:
+var conversation = {
+    'John': {
+        1: 'Message 1',
+        2: 'Message 2',
+        'Reply': {
+            3: '(Nested) Message 3',
+            4: '(Nested) Message 4'
+        }
+    },
+    'Jack': {
+        5: 'Message 5',
+        6: 'Message 6'
+    }
+};
+
+function printValues(obj) {
+    for (var key in obj) {
+        if (typeof obj[key] === "object") {
+            printValues(obj[key]);   
+        } else {
+            console.log(obj[key]);    
+        }
+    }
+}
+
+printValues(conversation);
