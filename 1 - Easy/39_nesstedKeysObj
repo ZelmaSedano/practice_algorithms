@@ -1,0 +1,35 @@
+// print the elements inside a nested object
+// Ex obj:
+var conversation = {
+  'John': {
+      1: 'Message 1',
+      2: 'Message 2',
+      'Reply': {
+          3: '(Nested) Message 3',
+          4: '(Nested) Message 4',
+          'Reply1': {
+            3: '(Nested deeper) Message 3',
+            4: '(Nested deeper) Message 4'
+        }
+      }
+  },
+  'Jack': {
+      5: 'Message 5',
+      6: 'Message 6'
+  }
+};
+
+// create a function that prints the values inside an object, included nested values
+function printValues(obj) {
+  // if the current element isn't a key/value pair, but an object, then recurse through it, calling printValues of obj[key]
+  // loop through the object
+  for(let key in obj) {
+    if(typeof key === 'object') {
+      printValues(key);
+    } else {
+      console.log('key: ' + key);
+    }
+  }
+}
+
+printValues(conversation);
