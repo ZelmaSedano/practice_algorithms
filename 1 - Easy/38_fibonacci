@@ -1,12 +1,18 @@
-function fibonacci(number) {
+function fibonacci(num) {
+  // num = 3
+  let sequence = [1,1];
 
-	var sequence = [1, 1];
+  for(let i = 2; i < num; i++) {
+    // sequence[2] (3rd element) = sequence[2-1] + sequence[2-2]
+    // sequence[1] + sequence[0] = 1 + 1 = 2
+    sequence[i] = sequence[i-1] + sequence[i-2];
+    console.log(sequence);
+  }
 
-	for (var i = 2; i < number; i++) {
-		sequence[i] = sequence[i-1]+ sequence[i-2];
-	}
-
-	return sequence[number-1];
+  // the last element at the last index
+  return sequence[num - 1];
+  // sequence[3-1] = sequence[2], return element at 2nd index
+  // sequence = [1,1,2], so return 2
 }
 
-console.log(fibonacci(7));
+console.log(fibonacci(3));
