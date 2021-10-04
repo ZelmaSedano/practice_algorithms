@@ -19,17 +19,16 @@ var conversation = {
   }
 };
 
-// create a function that prints the values inside an object, included nested values
-function printValues(obj) {
-  // if the current element isn't a key/value pair, but an object, then recurse through it, calling printValues of obj[key]
+// get the nested and unnested object keys
+function printKeys(obj) {
   // loop through the object
   for(let key in obj) {
     if(typeof key === 'object') {
-      printValues(key);
+      printKeys(key);
     } else {
-      console.log('key: ' + key);
+      console.log('object key: ' + key);
     }
   }
 }
 
-printValues(conversation);
+printKeys(conversation);
