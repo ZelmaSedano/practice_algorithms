@@ -1,0 +1,8 @@
+// create a function that swaps the first and last letter in a string
+function letterSwap(str) {
+  let arr = str.split('');
+  [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+  return arr.join('');
+}
+
+console.log(letterSwap('haha'));
