@@ -1,0 +1,8 @@
+// create a function that takes a string and a num and removes the character at the num's index
+function removeCharIndex(str, num) {
+  let part1 = str.slice(0,num);
+  let part2 = str.slice(num + 1, str.length);
+  return part1 + part2;
+}
+
+console.log(removeCharIndex('haha', 2));
