@@ -1,6 +1,5 @@
-function setAlarm(employed, vacation){
-  // the combo is what returns true; if you ARE employed and are NOT on vacation, return true
-  if (employed && !vacation){
+function setAlarm(employed, vacation) {
+  if(employed && !vacation) {
     return true;
   } else {
     return false;
@@ -8,6 +7,8 @@ function setAlarm(employed, vacation){
 }
 
 // is a weekday and not on vacation
-console.log(setAlarm(true, false));
+console.log('employed and not on vacation: ' + setAlarm(true, false));
 // is on vacation 
-console.log(setAlarm(true, true));
+console.log('on vacation: ' + setAlarm(true, true));
+// it's the weekend
+console.log('the weekend: ' + setAlarm(false,false));
