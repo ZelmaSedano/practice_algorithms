@@ -1,16 +1,17 @@
-function sameElements(arr1, arr2) {
-  let result = [];
-
-  for(let i = 0; i < arr1.length; i++) {
-    if(arr2.includes(arr1[i])) {
-      result.push(arr1[i]);
+var intersection = function(nums1, nums2) {
+    // create a empty result array variable
+    let result = [];
+    
+    // loop through the first array
+    for(let i = 0; i < nums1.length; i++) {
+        if(nums2.includes(nums1[i])) {
+          result.push(nums1[i]);
+        }
     }
-  }
+    
+    // we're only returning unique characters & it can be in any order
+    let unique = [... new Set(result)];
+    return unique;
+};
 
-  return result;
-}
-
-console.log(sameElements(['A', 'B', 'Z'], ['Z', 'X', 'Y']));
-console.log(sameElements(['Z', 'A', '1'],['D', 'A', '2']))
-// test
-console.log(sameElements([], [1,2,3]));
+intersection([1,2,2,1], [2,2]);
