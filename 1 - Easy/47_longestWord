@@ -1,0 +1,15 @@
+function longestWord(str) {
+  var words = str.split(' ');
+  var longest = 0;
+  var word = null;
+  for (var i = 0; i < words.length; i++) {
+      if (longest < words[i].length) {
+          longest = words[i].length;
+          word = words[i];
+      }
+  }
+  return word;
+}
+
+
+console.log(longestWord('haha ok what are you doing'));
