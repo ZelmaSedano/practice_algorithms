@@ -1,19 +1,16 @@
-// create a function that takes an array of indices, then an array of elements
-// only return elements at the indices specified in arr1 from arr2
-function fibonacci(num) {
-  let sequence = [1,1];
+function sameElements(arr1, arr2) {
+  let result = [];
 
-  // loop from 2 to num
-  for(let i = 2; i < num; i++) {
-    // reset value for sequence[i]
-    sequence[i] = sequence[i-1] + sequence[i-2];
-    // if num is 3, then 
-    // 1st loop: sequence[2] = sequence[1] + sequence[0] = 1
-    // 2nd loop: sequence[3] = sequence[2] + sequence[1] = 1 + 1 = 2
+  for(let i = 0; i < arr1.length; i++) {
+    if(arr2.includes(arr1[i])) {
+      result.push(arr1[i]);
+    }
   }
 
-  // since sequence is 0-indexed, we return num-1 to return element at num's index
-  return sequence[num-1];
+  return result;
 }
 
-console.log(fibonacci(8));
+console.log(sameElements(['A', 'B', 'Z'], ['Z', 'X', 'Y']));
+console.log(sameElements(['Z', 'A', '1'],['D', 'A', '2']))
+// test
+console.log(sameElements([], [1,2,3]));
