@@ -1,0 +1,10 @@
+let Techtonica = {
+  'studentName': 'Your Name',
+  'favoriteLanguage': 'Your favorite language',
+  'cohortNumber': 3
+};
+
+// remove the cohortNumber from the object
+delete Techtonica.cohortNumber;
+
+console.log(Techtonica);
