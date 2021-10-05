@@ -1,0 +1,37 @@
+// check to see if a string can make a palindrome
+// only one letter is allowed to have an odd count, if more than one letter has an odd count, then reject it 
+function canMakePalindrome(str) {
+  // create empty obj to hold key/value pairs
+  let obj = {};
+
+  // loop through string; if current element isn't in obj, add w/ value of 1; if it is in object, add to its value by 1
+  for(let char of str) {
+    if(!obj[char]) {
+      obj[char] = 1;
+    } else {
+      obj[char]++;
+    }
+  }
+  // console.log(obj);
+
+  let odd = [];
+  // loop through the object, adding to odd array if element's value is odd 
+  for(let value in obj) {
+    if(obj[value] % 2 === 1) {
+      odd.push(obj[value]);
+    }
+  }
+
+  // if there is more than one letter with an odd count, then it CAN'T be a palindrome
+  // if(odd.length > 1) {
+  //   return false;
+  // } else {
+  //   return true;
+  // }
+  return odd.length <= 1;
+}
+
+console.log(canMakePalindrome('carrace'));
+console.log(canMakePalindrome('techtonica'));
+console.log(canMakePalindrome('babat'));
+
