@@ -1,10 +1,10 @@
-// check to see if a string can make a palindrome
-// only one letter is allowed to have an odd count, if more than one letter has an odd count, then reject it 
-function canMakePalindrome(str) {
-  // create empty obj to hold key/value pairs
+// check to see if a given string can make a palindrome
+// a string that can make a palindrome can have an infinite amount of even letters, but ONLY ONE ODD NUMBER THAT CAN BE IN THE MIDDLE
+function checkPalindrome(str) {
+  // create empty object to hold key/value pairs
   let obj = {};
 
-  // loop through string; if current element isn't in obj, add w/ value of 1; if it is in object, add to its value by 1
+  // loop through str; if letter isn't in obj, add it w/ value of 1; if it is in obj, add to its value by 1
   for(let char of str) {
     if(!obj[char]) {
       obj[char] = 1;
@@ -12,26 +12,24 @@ function canMakePalindrome(str) {
       obj[char]++;
     }
   }
+
   // console.log(obj);
 
-  let odd = [];
-  // loop through the object, adding to odd array if element's value is odd 
+  // declare odd array
+  let oddArr = [];
+  // loop through the obj; if the value is odd, add to odd array
   for(let value in obj) {
     if(obj[value] % 2 === 1) {
-      odd.push(obj[value]);
+      oddArr.push(obj[value]);
     }
   }
 
-  // if there is more than one letter with an odd count, then it CAN'T be a palindrome
-  // if(odd.length > 1) {
-  //   return false;
-  // } else {
-  //   return true;
-  // }
-  return odd.length <= 1;
+  // console.log(oddArr);
+
+  // if length of odd array is longer than 1, return false
+  return oddArr.length <= 1;
 }
 
-console.log(canMakePalindrome('carrace'));
-console.log(canMakePalindrome('techtonica'));
-console.log(canMakePalindrome('babat'));
-
+console.log(checkPalindrome('carrace'));  // true
+console.log(checkPalindrome('techtonica')); // false
+console.log(checkPalindrome('babat'));  // true
