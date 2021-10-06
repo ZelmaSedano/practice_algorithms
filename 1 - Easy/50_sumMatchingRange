@@ -1,0 +1,18 @@
+// create a function that returns the sum of the integers that match from two separate ranges (only add the numbers that overlap between the two ranges)
+function sumMatchingRange(x1, x2, y1, y2) {
+    // create a sum variable to hold the sum
+    sum = 0; 
+
+    // loop from x1 to x2 (range 1), then y1 to y2 (range 2)
+    for (let i = x1; i <= x2; i++) {
+        for (let j = y1; j <= y2; j++) {
+            if (i === j) {
+                sum += i;
+            }
+        }
+    }
+    
+    return sum;
+}
+
+console.log(sumMatchingRange(1,10,5,15));
