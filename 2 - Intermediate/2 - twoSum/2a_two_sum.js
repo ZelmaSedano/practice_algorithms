@@ -8,6 +8,7 @@ function twoSum(arr, num) {
         for (let j = i+1; j < arr.length; j++) {
             if (arr[i] + arr[j] === num) {
                 result.push([arr[i], arr[j]]);
+                // if you want to push index, just push i (0) or i+1 (1)
             }
         }
     }
@@ -15,4 +16,4 @@ function twoSum(arr, num) {
     return result;
 }
 
-console.log(twoSum([2,3, 4, 5, ], 8));
+console.log(twoSum([2, 3, 4, 5], 8));
