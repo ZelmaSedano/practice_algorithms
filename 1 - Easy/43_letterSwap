@@ -1,8 +1,13 @@
 // create a function that swaps the first and last letter in a string
-function letterSwap(str) {
+function swapLetter(str) {
+  // split the array into letters
   let arr = str.split('');
-  [arr[0], arr[arr.length - 1]] = [arr[arr.length - 1], arr[0]];
+
+  // inside two arrays, set the first array in correct, then flip in 2nd array
+  [arr[0], arr[arr.length-1]] = [arr[arr.length-1], arr[0]];
+  
+  // return the joined array
   return arr.join('');
 }
 
-console.log(letterSwap('haha'));
+console.log(swapLetter('wowee'));
