@@ -1,15 +1,20 @@
+// create a function that returns the longest word in a str
 function longestWord(str) {
-  var words = str.split(' ');
-  var longest = 0;
-  var word = null;
-  for (var i = 0; i < words.length; i++) {
-      if (longest < words[i].length) {
-          longest = words[i].length;
-          word = words[i];
-      }
+  // create variable to hold longest word
+  let longest = ''; // it's set to 0 'cuz we're checking length
+
+  // split the string into an array
+  let words = str.split(' ');
+
+  // loop through the string
+  for(let i = 0; i < words.length; i++) {
+    // if longest.length is less than the length of the current word, reset the value of longest to word
+    if(longest.length < words[i].length) {
+      longest = words[i];
+    }
   }
-  return word;
+
+  return longest;
 }
 
-
-console.log(longestWord('haha ok what are you doing'));
+console.log(longestWord('this is the weirdest word'));
