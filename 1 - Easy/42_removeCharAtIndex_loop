@@ -1,9 +1,9 @@
-// remove char from a num's index
-function removeCharAtIndex(str, num) {
+// create a function that removes the num index from a string
+function removeChar(str, num) {
   let result = '';
 
-  // we are checking the number, so check i in for loop, not str[i]
-  for(let i = 0; i < str.length; i++) {
+  // loop through string; if current element ISN'T num, add to result
+  for(let i = 0; i < str.length; i++){
     if(i !== num) {
       result += str[i];
     }
@@ -12,4 +12,6 @@ function removeCharAtIndex(str, num) {
   return result;
 }
 
-console.log(removeCharAtIndex('haha', 2));
+console.log(removeChar('kitten', 1));
+console.log(removeChar('kitten', 0));
+console.log(removeChar('kitten', 4));
