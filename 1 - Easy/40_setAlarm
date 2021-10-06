@@ -1,14 +1,13 @@
-function setAlarm(employed, vacation) {
-  if(employed && !vacation) {
+// set alarm - set alarm is it's a weekday and it's not the weekend
+// write a function that returns TRUE IF WE SLEEP IN
+function sleepIn(weekday, vacation) {
+  if(!weekday || vacation) {
     return true;
   } else {
     return false;
   }
 }
 
-// is a weekday and not on vacation
-console.log('employed and not on vacation: ' + setAlarm(true, false));
-// is on vacation 
-console.log('on vacation: ' + setAlarm(true, true));
-// it's the weekend
-console.log('the weekend: ' + setAlarm(false,false));
+console.log(sleepIn(false, false)); // true
+console.log(sleepIn(true, false)); // false
+console.log(sleepIn(false, true)); // true;
