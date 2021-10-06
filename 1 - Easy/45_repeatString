@@ -1,5 +1,6 @@
-// repeat string
+// create a function that repeats a string num times
 function repeatString(str, num) {
+  // create result variable to add letters to
   let result = '';
 
   for(let i = 0; i < num; i++) {
@@ -9,4 +10,6 @@ function repeatString(str, num) {
   return result;
 }
 
-console.log(repeatString('Hi', 2));
+console.log(repeatString('Hi', 2)); // 'HiHi'
+console.log(repeatString('Hi', 3)); // 'HiHiHi'
+console.log(repeatString('Hi', 1)); // 'Hi'
