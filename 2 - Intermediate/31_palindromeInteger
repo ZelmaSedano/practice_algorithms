@@ -1,0 +1,19 @@
+// given an integer, return true if it's a palindrome integer
+// ex: 121 is a palindrome --> true
+// 123 --> false
+function palindromeInteger(num) {
+  // fast-fail
+  if(num < 0) { 
+    return false;
+  }
+  // convert the number to a string, split the string into an array, reverse the array
+  let str = num.toString().split('').reverse().join('');
+  // convert it back to a number
+  let int = parseInt(str);
+  // compare int w/ num to see if it's a palindrome
+  return int === num;z
+}
+
+console.log(palindromeInteger(121));  // true
+console.log(palindromeInteger(123));  // false
+console.log(palindromeInteger(-11));  // false
