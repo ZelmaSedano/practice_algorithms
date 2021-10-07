@@ -1,0 +1,26 @@
+// given a string, consisting of many words, with one or many spaces, we want to return the length of the last word in the string
+function lengthLastWord(str) {
+  // let result = '';
+
+  let arr = str.split(" ").map(function (value) {
+    return value.trim();
+  });
+
+  // loop backwards through the array, so we can pop off the last element
+  for(let i = arr.length; i >= 0; i--) {
+    // removing all empty strings (spaces)
+    if(arr[i] === '') {
+      arr.pop();
+    }
+  }
+  
+  // console.log(arr);
+
+  if(str === ' ') {
+    return -1;
+  } else {
+    return arr[arr.length-1].length;
+  }
+}
+
+console.log(lengthLastWord(' '));
