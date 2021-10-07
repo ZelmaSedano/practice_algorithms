@@ -1,0 +1,7 @@
+var getConcatenation = function(nums) {
+    // create another array, that's a copy of nums using the spread operator
+    let temp = [...nums];
+    // concatonate ans onto nums
+    let ans = temp.concat(nums);
+    return ans;
+};
