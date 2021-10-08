@@ -1,13 +1,15 @@
-// create a function that has an array of indices, then an array of elements, and then returns the elements from arr2 at the indices in arr1
+// create a function that returns elements from certain indexes in an array
 function elementsAtIndices(arr1, arr2) {
-  // create an empty array to return 
+  // arr1 holds indices, arr2 holds elements
+  // create a result variable to return
   let result = [];
 
-  // loop through arr1, return from arr2[arr[i]]
+  // loop through arr1, returning from arr2[arr1[i]], which is the element from arr2 at arr1's specified index
   for(let i = 0; i < arr1.length; i++) {
-    result.push(arr2[arr[i]]);
+    result.push(arr2[arr1[i]]);
   }
+
   return result;
 }
 
-console.log(elementsAtIndices([1,2,3], [11,22,33,44,55]));
+console.log(elementsAtIndices([2,3], [11,22,33,44]));
