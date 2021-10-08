@@ -1,4 +1,4 @@
-function indexIsTrue(arr, func) {
+function indexPassesFuncTest(arr, func) {
   let num = 0;
 
   for (let i = 0; i < arr.length; i++) {
@@ -11,4 +11,4 @@ function indexIsTrue(arr, func) {
   return undefined;
 }
 
-console.log(indexIsTrue([1,2,3], num => num % 2 === 0));
+console.log(indexPassesFuncTest([1,2,3], num => num % 2 === 0));
