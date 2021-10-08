@@ -1,6 +1,8 @@
+// remove duplicates
 function removeDupes(arr) {
-  let result = [...new Set(arr)];
-  return result;
+  // using brackets around it turns it into an array, instead of an object
+  let newArr = [...new Set(arr)];
+  return newArr;
 }
 
-console.log(removeDupes([1, 2, 3, 1]));
+console.log(removeDupes([1,2,3,3,3]));
