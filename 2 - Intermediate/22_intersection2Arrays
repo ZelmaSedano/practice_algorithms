@@ -1,17 +1,16 @@
-var intersection = function(nums1, nums2) {
-    // create a empty result array variable
-    let result = [];
+// create a function that returns the intersecting elements from two arrays
+function intersection(nums1, nums2) {
+  // create a empty result array variable
+  let result = [];
     
-    // loop through the first array
-    for(let i = 0; i < nums1.length; i++) {
-        if(nums2.includes(nums1[i])) {
-          result.push(nums1[i]);
-        }
-    }
-    
-    // we're only returning unique characters & it can be in any order
-    let unique = [... new Set(result)];
-    return unique;
-};
+  // loop through the first array
+  for(let i = 0; i < nums1.length; i++) {
+      if(nums2.includes(nums1[i])) {
+        result.push(nums1[i]);
+      }
+  }
 
-intersection([1,2,2,1], [2,2]);
+  return result;
+}
+
+console.log(intersection([3,4,5], [4,5,6]));
