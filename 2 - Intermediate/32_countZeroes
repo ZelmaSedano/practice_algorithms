@@ -8,11 +8,11 @@ function countZero(num) {
     count += Math.floor(num/10);
     // reset the value of num by num/10
     num = num/10;
-    console.log(`after division : ${count}`);
+    // console.log(`after division : ${count}`);
     // 10,20,30,40,50,60,70,80,90,100,110
   }
 
   return count;
 }
 
-console.log(countZero(2014)); // 223 zeroes between 0 and 2014
+console.log(countZero(10)); // 223 zeroes between 0 and 2014
