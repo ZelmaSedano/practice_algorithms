@@ -6,7 +6,7 @@ const plusOne = (arr) => {
   let num = parseInt(str);
   // add one to num
   let newNum = num + 1;
-  // convert num back into an array - 1) num -> str, str -> arr
+  // convert num back into a string
   let newStr = newNum.toString();
   // convert string into num
   let result = newStr.split('');
