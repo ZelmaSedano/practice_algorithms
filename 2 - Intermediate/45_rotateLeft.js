@@ -1,4 +1,7 @@
-function rotLeft(a, d) {
-  let rslt = a.slice(d).concat(a.slice(0,d));
-  return rslt
+const rotateLeft = (arr, num) => {
+  // slice at d, concat slice from 0 to d onto arr
+  let result = arr.slice(num).concat(a.slice(0,num));
+  return result
 }
+
+console.log()
