@@ -1,26 +1,9 @@
-// find the length of the longest word
+// create a function that returns the length of the last word, ignoring all white spaces that would add to the length
 function lengthLastWord(str) {
-  // split the string into a collection of words, then trim off the end - this will ensure there is no trailing empty spaces
-  let arr = str.split(' ').map(function(value) {
-    return value.trim();
-  })
+  // split the string into a collection of words and remove all white spaces
+  let arr = str.match(/[a-zA-Z]+/g);
 
-  // loop backwards through the arr, so we can pop off the last element if it's empy
-  for(let i = arr.length; i >= 0; i--) {
-    // remove all the trailing spaces
-    if(arr[i] === '') {
-      arr.pop();
-    }
-  }
-
-  // if string is empty, return -1
-  if(str === '') {
-    return -1;
-  } else {
-    // return the length of the last element
-    return arr[arr.length-1].length;
-  }
-
+  return arr[arr.length - 1].length;
 }
 
-console.log(lengthLastWord('last word '));
+console.log(lengthLastWord('lentth of  last  word      '));
