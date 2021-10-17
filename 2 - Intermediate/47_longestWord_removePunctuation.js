@@ -1,26 +1,23 @@
-// longest word in a string
-// ignore punctuation and assume the string will not be empty
+// create a function that finds the longest word in a string EXCLUDING punctuation
+// that means, you should go ahead and remove all the punctuation so you don't get stuck with a ? or . in your longest string
 function longestWord(str) {
-    // create an empty variable to return that holds the largest word
-    let largest = '';
+    // create a variable to hold the longest string
+    let longest = '';
 
-    // split the string into a collection of words
+    // remove all the punctuation using RegEx
     let arr = str.match(/[a-zA-Z]+/g);
 
-
-    // loop through the array of words; if the length of largest is less than the current word's length, set that word as largest's value
-
-    // ignore punctuation - loop backwards and pop?
+    // loop through the array; if the current element's length is longer than longest's length, then save it as longest's value
     for(let i = 0; i < arr.length; i++) {
-        // console.log(arr);
-
-        if(largest.length < arr[i].length) {
-            largest = arr[i];
+        if(arr[i].length > longest.length) {
+            longest = arr[i];
         }
     }
 
-    return largest;
+    return longest;
 }
 
-console.log(longestWord('this is a sentence'));
+console.log(longestWord('this is the longest?'));
+console.log(longestWord('hello!'));
+console.log(longestWord('howdy :)'));
 console.log(longestWord('Which word in the string will be the longest?'));// ‘longest’
