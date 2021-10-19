@@ -1,11 +1,11 @@
 // create a function that takes a string and returns an array WITHOUT COMMAS of the number of times the word appears in the string next to the word
-function wordHowManyTimes(string) {
+function wordHowManyTimes(str) {
     // create an empty object to push key/value pairs into
     let obj = {};
     
     // create an array of words 
     // pass a RegEx to remove all whitespace characters
-    let arr = string.split(' ');
+    let arr = str.match(/[a-zA-Z]+/g);
     
     // loop through the string
     for(let word of arr) {
@@ -31,6 +31,7 @@ function wordHowManyTimes(string) {
 
     return result;
 }
+
 
 console.log(wordHowManyTimes("The quick brown fox jumped over the lazy brown dog's back"));
 /* Output:
