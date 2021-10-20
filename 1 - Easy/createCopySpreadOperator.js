@@ -1,14 +1,10 @@
-// in functional programming, you never want to alter the original array, you want to create a copy, then alter that 
-// 1) create a function that adds a number to the array without altering the original
+// create a function that creates a copy of an array using the spread operator, so you don't alter the original array
+function copySpread(arr) {
+    let newArr = [...arr];
+    // add something to new array
+    newArr.push(5);
 
-let array = [1,2,3,4];
-
-function alter(arr) {
-  let newArr = [...arr];
-  newArr.push(5);
-
-  return newArr;
-  
+    return newArr;
 }
 
-console.log(alter(array));
+console.log(copySpread([1,2,3,4]));
