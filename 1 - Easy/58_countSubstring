@@ -1,0 +1,17 @@
+/*
+    Create a function to return the amount of potatoes there are in a string.
+    potatoes("potato") ➞ 1
+    potatoes("potatopotato") ➞ 2
+    potatoes("potatoapple") ➞ 1
+    123 - 3
+*/
+
+function howManyPotatoes(str, word) {
+    // create an empty count variable
+    let count = 0; 
+    // will return how many potatoes 
+
+    return str.split(word).length-1;
+}
+
+console.log(howManyPotatoes('potatoespotatoespotatoes', 'potatoe'));
