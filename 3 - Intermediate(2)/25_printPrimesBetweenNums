@@ -1,28 +1,28 @@
 // print prime numbers from num1 to num2
 function printPrimes(num1, num2) {
-  let result = []
+    let result = []
 
-  // loop through that array of numbers
-  for(let i = num1; i < num2; i++) {
-    // create variable to hold flag of every number 
-    let flag = 0;
+    // loop through that array of numbers
+    for(let i = num1; i < num2; i++) {
+        // create variable to hold flag of every number 
+        let flag = 0;
 
-    // loop from 2 to current num, not include current num
-    for(let j = 2; j < i; j++) {
-      // if current num divided by 
-      if(i % j == 0) {
-        flag = 1;
-        break; // stops loop after fail
-      }
+        // loop from 2 to current num, not include current num
+        for(let j = 2; j < i; j++) {
+            // if current num divided by 
+            if(i % j == 0) {
+                flag = 1;
+                break; // stops loop after fail
+        }
     }
 
-    // if number is greater than 1 & flag is 0 (has no divisors), console.log it
-    if(i > 1 && flag == 0) {
-      result.push(i);
+      // if number is greater than 1 & flag is 0 (has no divisors), console.log it
+        if(i > 1 && flag == 0) {
+            result.push(i);
+        }
     }
-  }
-  
-  return result;
-}
+    
+    return result;
+    }
 
 console.log(printPrimes(3,17));
