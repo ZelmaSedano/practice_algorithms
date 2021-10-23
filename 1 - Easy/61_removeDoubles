@@ -3,14 +3,13 @@ function removeDoubles(str){
     let result= "";
     //write a loop, interate through string
     for (let i = 0; i < str.length; i++){
-        // if character occurs twice in a row
+        //conditional statement comparing str[i] to str[i+1] 
         if (str[i] === str[i+1]){
             result += str[i];
-        // if character occurs only once
-        } else {
+        //how to check if a character occurs only once
+        } else if (i === (str.length -1)){
             result += str[i];
         }
-        
     }
 
     return result;
