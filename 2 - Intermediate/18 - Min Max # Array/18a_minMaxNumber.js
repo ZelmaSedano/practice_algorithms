@@ -1,12 +1,16 @@
-// create a function to return the min & max numbers from an array
-function minMaxNum(arr) {
-    // sort the array using the a,b trick
-    arr.sort(function(a,b) {
-        return a-b;
-    })
+// create a function that returns the smallest and largest numbers from a given array in that order (smallest, largest)
+function minMax(arr) {
+    // fail fast - check to see if arr is an array
+    if(arr.isArray === false) {
+        throw new Error('Please enter a valid array');
+    }
 
-    // you can't return b/c you're returning two values, and only the 2nd one will be displayed if you reutrn, so console.log
-    console.log(arr[0], arr[arr.length-1]);
+    // sort the array and return first and last element
+    let sorted = arr.sort((a,b) => a-b);
+
+    return ([sorted[0], sorted[sorted.length-1]]);
 }
 
-minMaxNum([33,33,3333,33333,3]);
+console.log(minMax([1,2,3,4,5])) // [1,5]
+console.log(minMax([23334454,5]));
+console.log(minMax([1]));
