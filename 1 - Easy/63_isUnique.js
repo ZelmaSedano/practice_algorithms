@@ -1,13 +1,10 @@
-function isUnique(s) {
-    // make a set from the string, then compare the two
-    let newSet = [...new Set(s)];
-    // convert the set to a string
-    let newStr = newSet.join('');
-    // console.log(newStr);
-    return newStr === s;
+// create a function that checks to see if every letter in a string is unique
+function isUnique(str) {
+    // make a new array with set & string
+    let arr = [... new Set(str)];
+    // convert the array back into a string
+    return arr.join('') === str
 }
 
-console.log(isUnique("dog")); // true
-console.log(isUnique("book")); // false
-console.log(isUnique("Spaces")) // true
-console.log(isUnique("")) // false
+console.log(isUnique('dog')); // no repeats
+console.log(isUnique('look')); // 2 o's
