@@ -1,0 +1,13 @@
+// create a function that removes an object's key 
+let Techtonica = {
+    'studentName': 'Your Name',
+    'favoriteLanguage': 'Your favorite language',
+    'cohortNumber': 3
+};
+
+function removeKey(obj) {
+    obj.cohortNumber = 4;
+    return obj
+}
+
+console.log(removeKey(Techtonica));
