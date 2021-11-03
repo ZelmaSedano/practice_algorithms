@@ -1,13 +1,11 @@
-// create a function that sorts words by their length
-function sortWordsLength(str) {
-  // split the str into a list of words and remove whitespace
-  let arr = str.match(/[a-zA-Z]+/g);
-  console.log(arr);
+// create a function that sorts the letters of a given string
+// remove whitespace
+function sortLetters(str) {
+    // remove the whitespace and join back into a string
+    let arr = str.match(/[a-zA-Z]+/g);
+    let newStr = arr.join('')
 
-  // sort the words by length
-  let sorted = arr.sort((a, b) => a.length - b.length);
-
-  return sorted;
+    return sorted = newStr.split('').sort().join('');
 }
 
-console.log(sortWordsLength('there are      a    lot of words here'));
+console.log(sortLetters('hi there'));
