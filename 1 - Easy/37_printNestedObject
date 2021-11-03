@@ -1,36 +1,31 @@
 // print the elements inside a nested object
-// Ex obj:
 var conversation = {
-  'John': {
-      1: 'Message 1',
-      2: 'Message 2',
-      'Reply': {
-          3: '(Nested) Message 3',
-          4: '(Nested) Message 4',
-          'Reply1': {
-            3: '(Nested deeper) Message 3',
-            4: '(Nested deeper) Message 4'
+    'John': {
+        1: 'Message 1',
+        2: 'Message 2',
+        'Reply': {
+            3: '(Nested) Message 3',
+            4: '(Nested) Message 4',
+            'Reply1': {
+                3: '(Nested deeper) Message 5',
+                4: '(Nested deeper) Message 6'
+            }
         }
-      }
-  },
-  'Jack': {
-      5: 'Message 5',
-      6: 'Message 6'
-  }
+    },
+    'Jack': {
+        5: 'Message 7',
+        6: 'Message 8'
+    }
 };
 
-// create a function to print the nested and un-nested keys
 function printValues(obj) {
-  // loop through the object, using key as the keyword
-  for(let key in obj) {
-    // if the key is an object, recurse through that object
-    if(typeof obj[key] === 'object') {
-      printValues(obj[key]);
-    } else {
-      // if it's a normal key/value pair, then console.log the key
-      console.log(obj[key]);
+    for(let key in obj) {
+        if(typeof obj[key] === 'object') {
+            printValues(obj[key]);
+        } else {
+            console.log(obj[key]);
+        }
     }
-  }
 }
 
-printValues(conversation);
+console.log(printValues(conversation));
