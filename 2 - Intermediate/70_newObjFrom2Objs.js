@@ -23,48 +23,44 @@
  *    areaCode: 415,
  * }
  */
+
 // object 
-let joinData = {
-   users: ['A', 'B', 'C'],
-    ages: [1, 2, 3],
-     isComplete: true,
-  }
-  
-let otherObj = {
-     users: ['X', 'Y', 'Z'],
-     ages: [44, 55, 66],
-     isComplete: false,
-  };
-
-function joinObj(obj1, obj2) {
-  let newObj = {};
-  
-  // loop through the object
-  for(let key in obj1) {
-    let value1 = obj1[key]; // the obj1 value for key
-    let value2 = obj2[key]; // the obj2 value for key
-    let newValue = undefined; // the key value for the newObj
-
-    // if value1 is an array, newValue should be value1 and value2 concatenated
-    // if value1 is not an array, newValue should be value2
-    if(Array.isArray(value1)) {
-      newValue = value1.concat(value2);
-    } else {
-      newValue = value2;
-    }
-    // set the new object's key with bracket notation & set its value to be newValue
-    newObj[key] = newValue;
-
-
-    // // if the current elemtn is an array
-    // if(Array.isArray(key)) {
-    //   // concatonate two arrays
-    //   // key b/c there are multiple props that are arrays
-    //   // if(!newObj(obj[key])) {
-    //   //   newObj(obj[key]);
-    //   // }
-    // }
-  }
-   return newObj
+let firstObj = {
+  users: ['A', 'B', 'C'],
+  ages: [1, 2, 3],
+  isComplete: true,
 }
-console.log(joinObj(joinData, otherObj));
+
+let secondObj = {
+  users: ['X', 'Y', 'Z'],
+  ages: [44, 55, 66],
+  isComplete: false,
+  areaCode: 415
+};
+
+function joinData(obj1, obj2) {
+  // create a new object
+  let newObj = {};
+
+  // loop through the object and create variables to hold the value of each key
+  for(let key in obj1) {
+    let value1 = obj1[key];
+    let value2 = obj2[key];
+    let newValue; // the key value for newObj
+
+    // while inside the loop - if the current value is an array, concatonate that 
+    if(Array.isArray(value1)) {
+      // add the concatonated values to newValue
+      newValue = value1.concat(value2);
+    } else {  // if the value isn't an array
+      newValue = value2;  // replaces original value
+    }
+
+    // set the new object's key as newValue (this will repeat with each loop)
+    newObj[key] = newValue;
+  }
+
+  return newObj;
+}
+
+console.log(joinData(firstObj, secondObj));
