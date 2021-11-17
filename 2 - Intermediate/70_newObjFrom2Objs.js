@@ -23,20 +23,19 @@
  *    areaCode: 415,
  * }
  */
-
 // object 
 let firstObj = {
-  users: ['A', 'B', 'C'],
-  ages: [1, 2, 3],
-  isComplete: true,
-}
-
-let secondObj = {
   users: ['X', 'Y', 'Z'],
   ages: [44, 55, 66],
   isComplete: false,
   areaCode: 415
 };
+let secondObj = {
+  users: ['A', 'B', 'C'],
+  ages: [1, 2, 3],
+  isComplete: true,
+}
+
 
 function joinData(obj1, obj2) {
   // create a new object
@@ -52,6 +51,8 @@ function joinData(obj1, obj2) {
     if(Array.isArray(value1)) {
       // add the concatonated values to newValue
       newValue = value1.concat(value2);
+    } else if(value2 === undefined) {
+      newValue = value1;
     } else {  // if the value isn't an array
       newValue = value2;  // replaces original value
     }
