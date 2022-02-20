@@ -1,10 +1,5 @@
-// create a function that confirms if the ending of a string is the same as the target 
 function confirmEnding(str, target) {
-    if (str.substr(-target.length) === target) {
-        return true;
-    } else {
-        return false;
-    }
+    return str.endsWith(target);
 }
 
-console.log(confirmEnding('I wonder', 'wond er'));
+console.log(confirmEnding('hi', 'i'));
