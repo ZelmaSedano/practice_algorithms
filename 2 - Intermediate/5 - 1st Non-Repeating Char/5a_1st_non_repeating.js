@@ -11,7 +11,7 @@ function firstNonRepeat(str) {
         }
     }
 
-    // loop through obj, return first element whose value is 1
+    // loop through obj using for-in loop, return first element whose value is 1
     for(let value in obj) {
         if(obj[value] === 1) {
             return 'first non-repeating letter: ', value;
