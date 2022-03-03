@@ -1,13 +1,13 @@
 // create a function that takes a path and returns the shortest possible path, aka, a simplified path
 function simplifyPath(path) {
     // create an array that removes the slashes from the path
-    let pathNoSlashesArr = path.split('/');
+    let arrNoSlahes = path.split('/');
 // 1) /home//foo --> arr = ['home', foo']
     // create a result pathNoSlashesArray to return
     let result = []
 
     // loop through the array using for of loop
-    for(let i of pathNoSlashesArr){
+    for(let i of arrNoSlahes){
         // if the current element is '..', remove it
         if(i === '..') {
             // remove it from result
