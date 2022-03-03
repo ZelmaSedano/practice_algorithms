@@ -1,26 +1,30 @@
+// create a function that takes a path and returns the shortest possible path, aka, a simplified path
 function simplifyPath(path) {
-    // create an array that removes the '/' from the path
-    let arr = path.split('/');
-    // console.log(arr) --> ['', 'home', '', 'foo', '']
-    // create a result arr to return 
-    let result = [];
-    // loop through the array
-    for (let i of arr) {
-        // if the current element is '..'
-        if (i === '..') {
-            // remove it 
+    // create an array that removes the slashes from the path
+    let pathNoSlashesArr = path.split('/');
+// 1) /home//foo --> arr = ['home', foo']
+    // create a result pathNoSlashesArray to return
+    let result = []
+
+    // loop through the array using for of loop
+    for(let i of pathNoSlashesArr){
+        // if the current element is '..', remove it
+        if(i === '..') {
+            // remove it from result
             result.pop();
-        // if the current element IS NOT '.' AND its length is longer than 0
-        } else if(i !== '.' && i.length > 0) {
-            // add that element to result
+        // if the current element is NOT '.', and its length is longer than 0
+        } else if(i !== '.' && i.length >0) {
+            // push i to result
             result.push(i);
         }
     }
-    // before join, result = ['home', 'foo'] w/ no /'s
-    // console.log(result)
-    // after join, result = /home/foo (/'s added b/w each element)
-    return '/' + result.join('/');
-};
+// 2) result = ['home', 'foo']
 
-console.log(simplifyPath('/home//foo/'))
-// /home/foo
+    // return slash at the beginning + result arr w/ slashes b/w each element
+// 3) result = /home/foo
+    return '/' + result.join('/');
+}
+
+console.log(simplifyPath('/..//home/'))
+// /..//home/ --> /home
+// remove .. & extra slashes, because /home is the SIMPLEST path
