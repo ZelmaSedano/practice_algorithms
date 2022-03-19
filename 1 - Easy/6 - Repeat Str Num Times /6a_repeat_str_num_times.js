@@ -1,13 +1,20 @@
-function repeatString(str, num) {
-  // create a result variable to return
-  result = '';
-
-  // loop from 1 to num, including num
-  for(let i = 1; i <= num; i++) {
-    result = result + str;
+function capitalizeFirstLetter(str) {
+  // 1) edgecase: if string is empty
+  if(str == '' || str == ' ') {
+    return false
   }
 
-  return result;
+  // split the string into words
+  words = str.split(' ')
+
+  // loop through the words wordsay
+  for(let i = 0; i < words.length; i++) {
+    // hi --> Hi
+    words[i] = words[i][0].toUpperCase() + words[i].slice(1);
+  }
+
+  // return
+  return words.join(' ')
 }
 
-console.log(repeatString('hi', 6))
+console.log(capitalizeFirstLetter(''))
