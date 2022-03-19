@@ -1,14 +1,13 @@
-// create a function that repeats a given string a number of times 
 function repeatString(str, num) {
-    // create a variable to hold the repeated string 
-    repeated = '';
+  // create a result variable to return
+  result = '';
 
-    // loop over and over num times
-    for (let i = 1; i <= num; i++) {
-        repeated = repeated + str;
-    }
+  // loop from 1 to num, including num
+  for(let i = 1; i <= num; i++) {
+    result = result + str;
+  }
 
-    return repeated;
+  return result;
 }
 
-console.log(repeatString('dumb', 3));
+console.log(repeatString('hi', 6))
