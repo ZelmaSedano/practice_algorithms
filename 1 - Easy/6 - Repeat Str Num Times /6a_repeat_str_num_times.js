@@ -1,6 +1,6 @@
 function repeatStr(str, num) {
     // edgecase: if str is empty
-    if(str == '' || str == ' ') {
+    if(!str || str.length === 0) {
         return false
     }
 
