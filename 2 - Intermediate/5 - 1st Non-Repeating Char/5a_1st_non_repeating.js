@@ -1,4 +1,9 @@
 function firstNonRepeat(str) {
+    // edgecase: if string is empty
+    if(!str || str.length === 0) {
+        return 'please add letters to string'
+    }
+
     // create an empty object 
     let obj = {};
 
@@ -22,4 +27,4 @@ function firstNonRepeat(str) {
     return 'no non-repeating letters';
 }
 
-console.log(firstNonRepeat('mom'));
+console.log(firstNonRepeat('helloh'))
