@@ -1,15 +1,13 @@
 function wordCount(str) {
-    if(str.length == 0) {
-        return 'please enter a valid string'
+    // edgecase: if str is empty or just a space
+    if(!str || str === ' ') {
+        return 'please add letters to string'
     }
-    // removes all the empty spaces
+    // remove all the empty spaces
     let arr = str.match(/[a-zA-Z]+/g);
-    if(arr == null) {
-        return 'please enter a valid string'
-    }
 
+    // split the string into an array
     return arr.length;
-
 }
 
-console.log(wordCount(' hi'))
+console.log(wordCount('hi  there'))
