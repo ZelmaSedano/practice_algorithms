@@ -1,16 +1,12 @@
-// create a function that returns the largest number in a given array 
 function largestNum(arr) {
-    // create a variable to hold the largest number
-    largest = 0; 
-
-    // loop through the array, comparing the current integer (i) with the value of the largest variable
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i] > largest) {
-            largest = arr[i];
-        }
+    if(arr.length === 0) {
+        return 'please add elements to array';
     }
 
-    return largest;
+    // sort the array
+    let sortedArr = arr.sort((a,b) => a-b);
+    console.log('smallest: ', sortedArr[0]);
+    return sortedArr[0];
 }
 
-console.log(largestNum([1,2,3,5,11]));
+console.log(largestNum([33,3333,3]))
