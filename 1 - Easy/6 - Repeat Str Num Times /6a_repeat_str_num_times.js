@@ -1,10 +1,10 @@
 function repeatStr(str, num) {
     // edgecase: if str is empty
-    if(!str || str == ' ') {
+    if(!str.trim().length) {
         return 'please add letters to string'
     }
 
     return str.repeat(num)
 }
 
-console.log(repeatStr(' ', 3))
+console.log(repeatStr('hi', 3))
