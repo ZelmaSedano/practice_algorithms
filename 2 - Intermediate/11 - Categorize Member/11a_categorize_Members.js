@@ -1,5 +1,9 @@
 // create a function that categorizes new members of a golf club
 function categorizeMembers(arr) {
+    // if array is empty, return a message
+    if(arr.length === 0) {
+        return 'please add more elements to array'
+    }
     // create an empty array to hold the correct assigned memberships
     result = [];
 
