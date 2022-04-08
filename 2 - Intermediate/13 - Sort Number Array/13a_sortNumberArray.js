@@ -1,5 +1,8 @@
 // create a function that sorts the numbers from an array 
 function sortNumbersArray(arr) {
+    if(arr.length === 0) {
+        return 'please add elements to array';
+    }
     // the default of the .sort method on the array is to sort strings, not numbers, so we have to use a little trick shown below
     arr.sort(function(a,b) {
         return a - b;
