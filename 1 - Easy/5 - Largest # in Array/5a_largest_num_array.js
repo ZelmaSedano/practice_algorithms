@@ -5,7 +5,6 @@ function largestNum(arr) {
 
     // sort the array
     let sortedArr = arr.sort((a,b) => a-b);
-    console.log('smallest: ', sortedArr[0]);
     return sortedArr[0];
 }
 
