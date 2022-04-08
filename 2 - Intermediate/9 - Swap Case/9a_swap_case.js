@@ -1,5 +1,9 @@
 // create a function that swaps the case of each letter in a given string
 function swapCase(str) {
+    // edgecase: if string is empty
+    if(str.trim().length === 0) {
+        return 'please add letters to string';
+    }
     // split the string into an array of letters
     arr = str.split('');
 
