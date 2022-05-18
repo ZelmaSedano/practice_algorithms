@@ -1,4 +1,4 @@
-function largestNum(arr) {
+function minimus(arr) {
     // edgecase: if array is empty
     if(arr.length === 0) {
         return 'please add elements to array';
@@ -9,4 +9,4 @@ function largestNum(arr) {
     return sortedArr[0];
 }
 
-console.log(largestNum([33,3333,3]))
+console.log(minimus([33,3333,3]))
