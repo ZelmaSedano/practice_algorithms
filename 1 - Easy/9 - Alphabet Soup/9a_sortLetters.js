@@ -1,6 +1,6 @@
 function sortLetters(str) {
     // edgecase: if str is empty
-    if(!str || str.length === 0) {
+    if(str.trim().length == 0) {
         return 'please add letters to string'
     }
 
