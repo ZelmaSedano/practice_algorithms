@@ -1,17 +1,23 @@
-function checkParentheses(str) {
-    // create a counter variable 
-    let counter = 0; 
+function checkParantheses(str) {
+    // edgecase: if string is empty or just spaces
+    if(str.trim().length === 0) {
+        return 'please add letters to string';
+    }
 
-    // loop through the string, checking to see if each element is ( or )
+    // create a count variable - add to it if '(' & subtract if ')'
+    let count = 0;
+
+    // loop through the string, if the current element is '(', add to count
     for(let i = 0; i < str.length; i++) {
-        if(str[i] === "(") {
-            counter++;
-        } else if(str[i] === ")") {
-            counter--;
+        if(str[i] === '(') {
+            count++;
+        } else if(str[i] === ')') {
+            count --;
         }
     }
 
-    return counter === 0;
+    // if count is 0 then the parantheses match
+    return count == 0;
 }
 
-console.log(checkParentheses('()()('));
+console.log(checkParantheses('()('))
