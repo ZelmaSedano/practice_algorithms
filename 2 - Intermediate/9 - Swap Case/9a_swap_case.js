@@ -1,18 +1,20 @@
-// create a function that swaps the case of each letter in a given string
 function swapCase(str) {
-    // edgecase: if string is empty
+    // edgecase: if string is empty or just spaces
     if(str.trim().length === 0) {
         return 'please add letters to string';
     }
     // split the string into an array of letters
     arr = str.split('');
 
-    // loop through the string, swapping the case of each letter
-        // when setting the value for something, use only 1 =
+    // loop through the string
     for (let i = 0; i < arr.length; i++) {
+        // if the current element is lowercased
         if (arr[i] === arr[i].toLowerCase()) {
+            // then uppercase it
             arr[i] = arr[i].toUpperCase(); 
+        // if the current element is uppercase
         } else if (arr[i] === arr[i].toUpperCase()) {
+            // then lowercase it
             arr[i] = arr[i].toLowerCase();
         }
     }
