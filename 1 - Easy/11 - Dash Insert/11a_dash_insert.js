@@ -1,21 +1,22 @@
 function dashInsert(str) {
-    // edgecase: if string is empty or spaces
+    // edgecase: if string is empty or just spaces
     if(str.trim().length === 0) {
         return 'please add letters to string';
     }
 
-    // split the string into an array of words
-    let words = str.split('');
+    // split the string into chars
+    let arr = str.split('');
 
-    // loop through the string and see if using a for loop
-    // -1 after length to avoid looking for next element after last element
-    for(let i = 0; i < words.length; i++) {
-        if(words[i] % 2 ==1 && words[i+1] % 2 ==1) {
-            words[i] == words[i] + '-';
+    // loop through the split array of chars
+    for(let i = 0; i < arr.length; i++) {
+        // if the current element is odd, then set the current element as 'arr[i] + '-''
+        if(arr[i] % 2 == 1 && arr[i+1] % 2 == 1) {
+            // reset the current element
+            arr[i] = arr[i] + '-';
         }
     }
 
-    return words.join('');
+    return arr.join('');
 }
 
-console.log(dashInsert('373737'))
+console.log(dashInsert('3737373'))
