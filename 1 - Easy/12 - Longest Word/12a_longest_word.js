@@ -1,23 +1,24 @@
 function longestWord(str) {
     // edgecase: if string is empty or just spaces
     if(str.trim().length === 0) {
-        return 'please add letters to string';
+        return 'please add strings to letters';
     }
 
     // create a variable to hold the longest word
     let longest = '';
 
     // split the string into an array of words
-    let words = str.split(' ');
+    let arr = str.split(' ');
 
-    // loop through the array of words; if the current word is longer than longest, then set longest to the current word
-    for(let i = 0; i < words.length; i++) {
-        if(words[i].length > longest.length) {
-            longest = words[i];
+    // loop through the array of words
+    for(let i = 0; i < arr.length; i++) {
+        // if the current word is longer than longest, then make it longest's value
+        if(arr[i].length > longest.length) {
+            longest = arr[i];
         }
     }
 
-    return longest;
+    return `The longest word is in the string is: ${longest}`;
 }
 
-console.log(longestWord('hi there I am Saumya'))
+console.log(longestWord('hi there'))
