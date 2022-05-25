@@ -1,17 +1,21 @@
-// create a function that puts a dash between two consecutive numbers in a string 
 function dashInsert(str) {
-    // split the string into an array 
-    arr = str.split('');
+    // edgecase: if string is empty or spaces
+    if(str.trim().length === 0) {
+        return 'please add letters to string';
+    }
 
-    // loop through the string using a for loop, checking the value of arr[i] & arr[i+1] to see if they're both odd 
-    for (let i = 0; i < arr.length-1; i++) {
-        // use a conditional to check the value 
-        if (arr[i] % 2 != 0 && arr[i+1] % 2 != 0) {
-            arr[i] = arr[i] + '-';
+    // split the string into an array of words
+    let words = str.split('');
+
+    // loop through the string and see if using a for loop
+    // -1 after length to avoid looking for next element after last element
+    for(let i = 0; i < words.length; i++) {
+        if(words[i] % 2 ==1 && words[i+1] % 2 ==1) {
+            words[i] == words[i] + '-';
         }
     }
 
-    return arr.join('');
+    return words.join('');
 }
 
-console.log(dashInsert('333555777'));
+console.log(dashInsert('373737'))
