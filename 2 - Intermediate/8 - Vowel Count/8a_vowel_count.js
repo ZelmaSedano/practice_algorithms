@@ -1,21 +1,27 @@
-// create a function that counts the number of times a vowel is in a string
 function vowelCount(str) {
-    // specify what vowels are
+    // edgecase: if str is empty or just spaces
+    if(str.trim().length == 0) {
+        return 'please add letters to string';
+    }
+
+    // specify what a vowel is
     let vowels = ['a', 'e', 'i', 'o', 'u'];
 
-    // convert every letter to lowercase so they can match vowels
+    // lowercase all the letters so they match arrays
     str = str.toLowerCase();
 
     // create a counter variable
     let count = 0;
 
+    // loop through the string
     for(let i = 0; i < str.length; i++) {
+        // if the current element is included in vowels
         if(vowels.includes(str[i])) {
             count++;
         }
     }
 
-    return count;
+    return `The string has ${count} vowels`
 }
 
-console.log(vowelCount('hi abc there'));
+console.log(vowelCount('hi there'))
