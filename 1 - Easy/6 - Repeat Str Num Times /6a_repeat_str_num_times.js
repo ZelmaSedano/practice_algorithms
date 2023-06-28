@@ -1,14 +1,13 @@
-function repeatString(str, num) {
-    // edgecase: if string is empty or num is negative
+function repeatStr(str, num) {
+    // edgecases: if str is empty or num is negative or 0
     if(str.trim().length === 0) {
-        return 'please add letters to string';
+        return 'please enter a valid string';
     }
-    // if number is negative or not an integer
-    if(num < 0 || num % 1 !== 0) {
-        return 'please only use positive whole numbers';
+    if(num <= 0) {
+        return 'please enter a positive number';
     }
 
-    return str.repeat(num)
+    return str.repeat(num);
 }
 
-console.log(repeatString('hi', 3))
+console.log(repeatStr('hi', 3));
