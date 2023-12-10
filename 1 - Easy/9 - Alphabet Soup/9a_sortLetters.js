@@ -1,10 +1,17 @@
 function sortLetters(str) {
-    // edgecase: if str is empty
-    if(str.trim().length == 0) {
-        return 'please add letters to string'
-    }
+  // edgecase: if string is empty or just spaces
+  if(str.trim().length == 0) {
+    return 'please enter a valid string';
+  }
 
-    return str.split('').sort().join('');
+  let letters = [];
+  for(let i = 0; i < str.length; i++) {
+    if(str[i] != ' ') {
+      letters.push(str[i])
+    }
+  }
+
+  return letters.sort().join('');
 }
 
-console.log(sortLetters('hi there'))
+console.log(sortLetters('how are you'))
