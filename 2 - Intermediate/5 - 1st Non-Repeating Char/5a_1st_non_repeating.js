@@ -1,30 +1,14 @@
-function firstNonRepeat(str) {
-    // edgecase: if string is empty
-    if(!str || str.length === 0) {
-        return 'please add letters to string'
+function firstNonRepeatingCharacter(str) {
+  // edgecase: if string is empty or just spaces
+  if(str.trim().length == 0) {
+    return 'please enter a valid string';
+  }
+  for (let i = 0; i < str.length; i++) {
+    if (str.indexOf(str[i]) == i && str.indexOf(str[i], i + 1) == -1) {
+      return str[i];
     }
-
-    // create an empty object 
-    let obj = {};
-
-    // loop through string, if letter isn't in obj, add it; if it is, add to its value by 1
-    for(let char of str) {
-        if(!obj[char]) {
-            obj[char] = 1;
-        } else {
-            obj[char]++;
-        }
-    }
-
-    // loop through obj using for-in loop, return first element whose value is 1
-    for(let value in obj) {
-        if(obj[value] === 1) {
-            return 'first non-repeating letter: ', value;
-        }
-    }
-
-    // backup
-    return 'no non-repeating letters';
+  }
+  return "no non-repeating letters";
 }
 
-console.log(firstNonRepeat('helloh'))
+console.log(firstNonRepeatingCharacter('dkdkdkdsn'))
