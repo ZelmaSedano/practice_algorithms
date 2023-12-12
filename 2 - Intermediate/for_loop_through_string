@@ -1,0 +1,5 @@
+let str = 'hi there';
+
+for (let i in str) {
+  console.log(str[i]);
+}
