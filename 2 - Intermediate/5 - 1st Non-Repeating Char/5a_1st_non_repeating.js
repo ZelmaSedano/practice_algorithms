@@ -4,6 +4,7 @@ function firstNonRepeatingCharacter(str) {
     return 'please enter a valid string';
   }
   for (let i = 0; i < str.length; i++) {
+    // loop through the string; if the current element's value ISN'T present, return the element's value
     if (str.indexOf(str[i], i + 1) == -1) {
       return str[i];
     }
