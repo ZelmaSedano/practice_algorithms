@@ -1,5 +1,5 @@
-// The most recent code I've been working on are mostly code challenges
-// I've been trying to optimize them so that they are one-line solutions
+// The most recent code I've been working on is proprietary to Sony, but I have been trying to revamp my portfolio
+// I've also been trying to optimize my code challenges so that they are one-line solutions
 function firstNonRepeatingCharacter(str) {
   // edgecase: if string is empty or just spaces
   if(str.trim().length == 0) {
