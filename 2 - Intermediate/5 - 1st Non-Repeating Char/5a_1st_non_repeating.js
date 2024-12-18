@@ -1,21 +1,18 @@
-// The most recent code I've been working on is proprietary to Sony, but I have been trying to revamp my portfolio
-// I've also been trying to optimize my code challenges so that they are one-line solutions
-function firstNonRepeatingCharacter(str) {
-  // edgecase: if string is empty or just spaces
-  if(str.trim().length == 0) {
-    return 'please enter a valid string';
-  }
-  
+// create a function that returns the first non-repeating character
+function firstNonRepeatingChar(str) {
+  // loop through the string
   for (let i = 0; i < str.length; i++) {
-    // loop through the string
-    // if the current char DOESN'T appear more than once, return that character
-    if (str.indexOf(str[i], i + 1) == -1) {
+    // indexOf returns the index of an element
+    // lastIndexOf returns the last occurrence of an element
+    // check to see if the current element's location in the array is the same as the last time it occurred
+    // if it only occurs once, then they have the same index/location
+    if (str.indexOf(str[i]) === str.lastIndexOf(str[i])) {
       return str[i];
     }
   }
-
-  // backup if there are no non-repeating characters
-  return "no non-repeating letters";
+  return null; // Return null if no non-repeating character is found
 }
 
-console.log(firstNonRepeatingCharacter('adbbac'))
+// Example usage:
+console.log(firstNonRepeatingChar("swiss")); // Output: "w"
+console.log(firstNonRepeatingChar("aabbcc")); // Output: null
