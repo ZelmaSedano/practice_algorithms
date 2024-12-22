@@ -5,4 +5,4 @@ const repeatStr = (str, num) => {
     return str.repeat(num);
 }
 
-console.log(repeatStr('hi', 3))
+console.log(repeatStr('hi', 3));
